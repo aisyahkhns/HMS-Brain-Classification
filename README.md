@@ -4,10 +4,13 @@ This repository contains the **data-centric pipeline** for the [HMS – Harmful 
 The main focus here is **data preparation**: EEG preprocessing, spectrogram generation, quality control, and label handling before training.
 
 ---
+<img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/d280f584-e840-4201-8e9f-d9e3c5803c96" />
+<img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/aa024c2e-fdc4-4e80-8814-5dde000e384d" />
+<img width="1920" height="1080" alt="3" src="https://github.com/user-attachments/assets/0b021f1d-d03a-489d-bc1d-6f28c9cdd935" />
+<img width="1920" height="1080" alt="4" src="https://github.com/user-attachments/assets/d4af065d-a7e2-476d-ba13-3978456e6232" />
 
 ## 📌 Project Scope
 The **data-centric** part of the project covers:
-<img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/d280f584-e840-4201-8e9f-d9e3c5803c96" />
 
 1. **EEG Preprocessing**  
    - Bandpass filtering (0.5–20 Hz) + amplitude clipping.  
