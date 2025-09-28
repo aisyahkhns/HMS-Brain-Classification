@@ -2,7 +2,7 @@
 
 This repository contains the **data-centric pipeline** for the [HMS – Harmful Brain Activity Classification](https://www.kaggle.com/competitions/hms-harmful-brain-activity-classification) competition.  
 The main focus here is **data preparation**: EEG preprocessing, spectrogram generation, quality control, and label handling before training.
-
+Dataset : https://drive.google.com/drive/folders/1l_2YFJaut12ZVtbGyWzRxNKGx4Q-YXLo?usp=sharing
 ---
 <img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/d280f584-e840-4201-8e9f-d9e3c5803c96" />
 <img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/aa024c2e-fdc4-4e80-8814-5dde000e384d" />
