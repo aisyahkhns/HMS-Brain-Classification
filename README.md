@@ -35,9 +35,70 @@ The **data-centric** part of the project covers:
 
 5. **Data Splits**  
    - **GroupKFold** (by patient) to ensure no patient overlap across folds.  
-   - Saved as `splits.npz`.  
+   - Saved as `splits.npz`.
+  
 
 6. **Quality Control (QC)**  
    - Checked NaN/Inf values in spectrograms and waveforms.  
    - Inspected vote distribution (`vote_sum`), class proportions, and imbalance.  
    - Found imbalance (e.g., minority class = seizure).  
+
+# HMS Brain Classification – Data-Centric Preprocessing
+
+This repository contains the **data-centric pipeline** for the HMS Brain Activity Classification project.  
+It prepares the dataset so that model-centric training can directly use processed files without re-running preprocessing.
+
+---
+
+## 📂 Files to be used
+
+### 1. `data_package/`
+- **`meta_use.csv`** → metadata (eeg_id, patient_id, etc.)
+- **`labels.npz`** → processed labels:
+  - `y_soft` (soft labels, probability distribution across classes)  
+  - `w_conf` (confidence weights from vote counts)  
+  - `hc_mask` (high-confidence sample mask)  
+  - `classes` (class names: seizure, lpd, gpd, lrda, grda, other)  
+- **`splits.npz`** → 5-fold train/valid indices (GroupKFold per patient)
+
+### 2. `spec_hr_out/`
+- All processed **spectrograms** per EEG  
+- Format: `<eeg_id>_hr.npz` containing:
+  - `x`: spectrogram array [C=4, F, T] (0–1 normalized)  
+  - `freqs`: frequency bins  
+  - `eeg_id`, `patient_id`  
+
+### 3. `wave_hr_out/` *(optional)*
+- All processed **waveforms** per EEG  
+- Format: `<eeg_id>_hr.npz` containing:
+  - `x`: waveform [C=4, T]  
+  - `fs`: sampling rate (Hz)  
+  - `eeg_id`, `patient_id`  
+
+---
+
+## 📘 Documentation
+
+### 1. Data Preparation
+- Input: original `train.csv`, `train_eegs/`, `train_spectrograms/`  
+- Preprocessing applied:
+  1. **Bandpass filtering** (0.5–20 Hz) + clipping  
+  2. **Montage** (Double Banana: LL, LP, RL, RP)  
+  3. **Normalization** (log1p + percentile scaling for spectrograms)  
+  4. **Windowing** (10s HR segments)  
+- Outputs stored in: `spec_hr_out/`, `wave_hr_out/`
+
+### 2. Labels
+- Raw expert votes are rebuilt into **soft labels** (probability distribution).  
+- Confidence weights (`w_conf`) scale sample contribution during training.  
+- High-confidence samples (`hc_mask`) used for Stage-1 training.
+
+### 3. Splits
+- Patient-wise **GroupKFold** (5 folds, no patient overlap).  
+- Saved in `data_package/splits.npz` with keys: `train_0…4`, `valid_0…4`.
+
+### 4. Training
+- **Default input**: spectrograms (`spec_hr_out/`)  
+- **Optional branch**: waveforms (`wave_hr_out/`)  
+- Data loading via `SpecDataset` (supports augmentation, confidence weighting).  
+
