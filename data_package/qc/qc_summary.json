@@ -1,0 +1,36 @@
+{
+  "n_samples": 3364,
+  "n_patients": 21,
+  "vote_sum_min": 1,
+  "vote_sum_max": 20,
+  "hc_threshold": 10,
+  "hc_count": 1203,
+  "agreement_mean": 0.817120373249054,
+  "agreement_std": 0.20666487514972687,
+  "entropy_mean": 0.4044544994831085,
+  "entropy_std": 0.4442305862903595,
+  "class_totals": {
+    "seizure": 1450,
+    "lpd": 2121,
+    "gpd": 4699,
+    "lrda": 7282,
+    "grda": 4627,
+    "other": 3997
+  },
+  "class_proportions": {
+    "seizure": 0.059976834803819656,
+    "lpd": 0.08773163706064224,
+    "gpd": 0.19436632096767426,
+    "lrda": 0.3012078106403351,
+    "grda": 0.19138815999031067,
+    "other": 0.165329247713089
+  },
+  "spectrogram_qc": {
+    "scanned_files": 195,
+    "total_files": 195,
+    "naninf_files": 7,
+    "empty_chain_samples": 0,
+    "x_min_overall": NaN,
+    "x_max_overall": NaN
+  }
+}

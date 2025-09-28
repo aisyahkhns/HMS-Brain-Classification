@@ -1,0 +1,66 @@
+{
+  "sync": {
+    "meta_n": 195,
+    "spec_n": 195,
+    "wave_n": 195,
+    "missing_spec": [],
+    "missing_wave": []
+  },
+  "waveform": {
+    "fs_unique": [
+      200
+    ],
+    "T_unique": [
+      2000
+    ],
+    "finite_ratio": 0.9641025641025641,
+    "mad_mean": {
+      "LL": 5.545577476487885,
+      "LP": 5.545577444466241,
+      "RL": 5.869063201591426,
+      "RP": 5.869063115354918
+    },
+    "mad_std": {
+      "LL": 3.2683238867667908,
+      "LP": 3.268323825145781,
+      "RL": 5.057839575890554,
+      "RP": 5.0578393945919204
+    },
+    "min_global": -125.00000762939453,
+    "max_global": 125.0,
+    "corr_mean": {
+      "corr_LL_LP": 0.9999999926950431,
+      "corr_RL_RP": 1.0000000040168338,
+      "corr_LL_RL": 0.7205653095420087,
+      "corr_LP_RP": 0.7205653051991804
+    },
+    "corr_std": {
+      "corr_LL_LP": 8.55359442427332e-08,
+      "corr_RL_RP": 8.025009377992598e-08,
+      "corr_LL_RL": 0.2827534664949023,
+      "corr_LP_RP": 0.2827534663161864
+    },
+    "bad_wave_files": [
+      "1480985066_hr.npz",
+      "1632070193_hr.npz",
+      "2880273173_hr.npz",
+      "3023900245_hr.npz",
+      "3403533082_hr.npz",
+      "3947918181_hr.npz",
+      "4239311496_hr.npz"
+    ],
+    "bad_wave_count": 7
+  },
+  "spectrogram": {
+    "finite_ratio": 1.0,
+    "x_min_global": 0.0,
+    "x_max_global": 1.0,
+    "x_mean_mean": 0.3803013408031219,
+    "x_std_mean": 0.29233139065595776,
+    "p_zero_95pct": 0.1924759999999978,
+    "p_one_95pct": 0.01004,
+    "freq_mismatch_count": 0,
+    "bad_spec_files": [],
+    "bad_spec_count": 0
+  }
+}
