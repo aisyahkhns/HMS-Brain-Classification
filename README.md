@@ -43,13 +43,6 @@ The **data-centric** part of the project covers:
    - Inspected vote distribution (`vote_sum`), class proportions, and imbalance.  
    - Found imbalance (e.g., minority class = seizure).  
 
-# HMS Brain Classification – Data-Centric Preprocessing
-
-This repository contains the **data-centric pipeline** for the HMS Brain Activity Classification project.  
-It prepares the dataset so that model-centric training can directly use processed files without re-running preprocessing.
-
----
-
 ## 📂 Files to be used
 
 ### 1. `data_package/`
